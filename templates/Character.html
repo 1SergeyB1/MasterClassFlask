@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>{{data.name}}</title>
+{% endblock %}
+
+{% block body %}
+<h1>{{data.id}}</h1><br>
+<h1>{{data.name}}</h1><br>
+<h1>{{data.status}}</h1><br>
+<h1>{{data.species}}</h1><br>
+<h1>{{data.Type}}</h1><br>
+<h1>{{data.gender}}</h1><br>
+<h1>{{data.created}}</h1><br>
+<img src="{{ url_for('static', filename=img)}}" alt="CharecterImage">
+
+{% endblock %}

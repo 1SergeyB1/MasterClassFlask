@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Таблица персонажей</title>
+{% endblock %}
+
+{% block body %}
+<h1>Таблица персонажей</h1><br>
+    {% for i in data %}
+    <a href = "/Character/{{ i.id }}">{{i.name}}</a><br>
+    {%endfor%}
+{% endblock %}
