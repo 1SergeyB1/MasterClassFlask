@@ -2,16 +2,24 @@
 
 {% block title %}
 <title>{{data.name}}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Character.css') }}">
 {% endblock %}
 
 {% block body %}
-<h1>{{data.id}}</h1><br>
-<h1>{{data.name}}</h1><br>
-<h1>{{data.status}}</h1><br>
-<h1>{{data.species}}</h1><br>
-<h1>{{data.Type}}</h1><br>
-<h1>{{data.gender}}</h1><br>
-<h1>{{data.created}}</h1><br>
-<img src="{{ url_for('static', filename=img)}}" alt="CharecterImage">
+<div class="container">
+    <div class="AvatarContainer"><img src="{{ url_for('static', filename=img)}}" class="avatar" alt="CharecterImage"></div>
 
+    <div class="BIO">
+        <div class="BIOtext">Имя: {{data.name}}</div>
+        <div class="BIOtext">Статус: {{data.status}}</div>
+        <div class="BIOtext">Вид: {{data.species}}</div>
+        <div class="BIOtext">Тип: {{data.Type}}</div>
+        <div class="BIOtext">Пол: {{data.gender}}</div>
+    </div>
+</div>
+<div class="buttons container">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+</div>
 {% endblock %}

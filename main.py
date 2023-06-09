@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from requests import post
 import os
 
-IMG_FOLDER = os.path.join('jpeg')
+IMG_FOLDER = os.path.join('avatars')
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Data.db'
 app.config['UPLOAD_FOLDER'] = IMG_FOLDER
@@ -34,12 +34,6 @@ def Create():
 @app.route('/Edit', methods=['POST', 'GET'])
 def Edit():
     return render_template('Create.html')
-
-@app.route("/images")
-def Display_IMG():
-    IMG_LIST = os.listdir('static/jpeg')
-    IMG_LIST = ['jpeg/' + i for i in IMG_LIST]
-    return render_template("images.html", imagelist=IMG_LIST)
 
 @app.route('/Character/<int:item_id>', methods=['POST', 'GET'])
 def Character(item_id):

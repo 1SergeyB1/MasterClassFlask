@@ -2,11 +2,17 @@
 
 {% block title %}
 <title>Таблица персонажей</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 {% endblock %}
 
 {% block body %}
-<h1>Таблица персонажей</h1><br>
-    {% for i in data %}
-    <a href = "/Character/{{ i.id }}">{{i.name}}</a><br>
-    {%endfor%}
+
+<div class="list">
+    <h2>Таблица персонажей</h2>
+    <ul>
+        {% for i in data %}
+        <li><a href = "/Character/{{ i.id }}">{{i.name}}</a><br></li>
+        {%endfor%}
+    </ul>
+</div>
 {% endblock %}
