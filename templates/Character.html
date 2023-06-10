@@ -18,8 +18,14 @@
     </div>
 </div>
 <div class="buttons container">
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
+    <form method="post">
+        <input type="submit" name="delete" id="delete" value="Удалить персонажа">
+    </form>
+    <form action="/Edit/{{data.id}}" target="_blank">
+        <button>Редактировать</button>
+    </form>
+    <form action="/" target="_blank">
+        <button>На главную</button>
+    </form>
 </div>
 {% endblock %}

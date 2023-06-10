@@ -1,9 +1,24 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title> Создать страницу персонажа </title>
+<title>Редактировать страницу персонажао</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Character.css') }}">
 {% endblock %}
 
 {% block body %}
-<h1> Создать страницу персонажа </h1>
+<h1>Редактировать страницу персонажа</h1>
+<form method="post">
+<div class="container">
+    <div class="AvatarContainer"><img src="{{ url_for('static', filename=img)}}" class="avatar" alt="CharecterImage"></div>
+
+    <div class="BIO">
+            <div class="BIOtext">Имя: <input class="edit" type="text" name="name" id="name"></div>
+            <div class="BIOtext">Статус: <input class="edit" type="text" name="status" id="status"></div>
+            <div class="BIOtext">Вид: <input class="edit" type="text" name="species" id="species"></div>
+            <div class="BIOtext">Тип: <input class="edit" type="text" name="Type" id="Type"></div>
+            <div class="BIOtext">Пол: <input class="edit" type="text" name="gender" id="gender"></div>
+    </div>
+</div>
+    <button type="submit">Редактировать</button>
+</form>
 {% endblock %}
